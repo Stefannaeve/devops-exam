@@ -41,7 +41,7 @@ jobs:
       - name: Deploy SAM Application
         id: deploy
         run: |
-          sam deploy
+          sam deploy --guided
               
       - name: Output Deployment URL
         run: echo "Lambda deployment successful"
