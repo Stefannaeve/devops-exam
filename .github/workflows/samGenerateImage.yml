@@ -35,12 +35,13 @@ jobs:
           
       - name: Build SAM Application
         run: |
-            cd kandidat23-generate-image
-            sam build
+          cd kandidat23-generate-image
+          sam build
       
       - name: Deploy SAM Application
         id: deploy
         run: |
+          cd kandidat23-generate-image  
           sam deploy --guided
               
       - name: Output Deployment URL
