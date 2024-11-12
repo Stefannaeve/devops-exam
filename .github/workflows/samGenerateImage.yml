@@ -41,9 +41,7 @@ jobs:
       - name: Deploy SAM Application
         id: deploy
         run: |
-          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset \
-              --stack-name my-sam-lambda-stack \
-              --capabilities CAPABILITY_IAM
+          sam deploy
               
       - name: Output Deployment URL
         run: echo "Lambda deployment successful"
