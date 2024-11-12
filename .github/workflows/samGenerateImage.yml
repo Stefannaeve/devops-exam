@@ -1,46 +1,47 @@
 name: Deploy Sam Generate Image
 
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches:
+      - main
+
 jobs:
-    Build:
-        name: Build, and make ready for deployement
-        runs-on: ubuntu-latest
-        
-        environment:
-            name: main
-            url: 
+  Build:
+    name: Build and Prepare for Deployment
+    runs-on: ubuntu-latest
     
-        steps:
-            - name: Checkout Code
-                uses: actions/checkout@v4
-            
-            - name: Set up Python
-                uses: actions/setup-python@v5
-                with:
-                    python-version: '3.8'
-            
-            - name: Install AWS SAM CLI
-                run: pip install aws-sam-cli
-                
-            - name: Configure AWS Credentials
-                uses: aws-actions/configure-aws-credentials@v1
-                with:
-                    aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-                    aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-                    
-            - name: Build SAM Application
-                run: sam build
-            
-            - name: Deploy SAM Application
-                id: deploy
-                run: |
-                    sam deploy --no-confirm-changeset --no-fail-on-empty-changeset \
-                        --stack-name my-sam-lambda-stack \
-                        --capabilities CAPABILITY_IAM
-                        
-            - name: Output Deployement URL
-                run: echo "lambda deployement successfull"
-                if: success()
+    environment:
+      name: main
+      url: 
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.8'
+      
+      - name: Install AWS SAM CLI
+        run: pip install aws-sam-cli
+        
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          
+      - name: Build SAM Application
+        run: sam build
+      
+      - name: Deploy SAM Application
+        id: deploy
+        run: |
+          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset \
+              --stack-name my-sam-lambda-stack \
+              --capabilities CAPABILITY_IAM
+              
+      - name: Output Deployment URL
+        run: echo "Lambda deployment successful"
+        if: success()
