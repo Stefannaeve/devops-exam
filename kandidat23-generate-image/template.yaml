@@ -1,0 +1,83 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Parameters:
+  BucketName:
+    Type: String
+
+Globals:
+  Function:
+    Timeout: 3
+    Environment:
+      Variables:
+        BUCKET_NAME: !Ref BucketName
+
+Resources:
+  GenerateImageFunction:
+    Type: AWS::Serverless::Function
+    Auth:
+      Authorizer: NONE
+    Properties:
+      CodeUri: generateImage/
+      Handler: app.lambda_handler
+      Role: !GetAtt GenerateImageFunctionIamRole.Arn
+      Runtime: python3.8
+      Timeout: 30
+      Events:
+        GenerateImage:
+          Type: Api
+          Properties:
+            Path: /generate-image
+            Method: post
+
+  GenerateImageFunctionIamRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Path: /
+      Policies:
+        - PolicyName: CloudWatchLogsPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 'logs:CreateLogGroup'
+                  - 'logs:CreateLogStream'
+                  - 'logs:PutLogEvents'
+                Resource: 'arn:aws:logs:*:*:*'
+        - PolicyName: BedrockFullAccess
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 'bedrock:*'
+                Resource: '*'
+        - PolicyName: S3FullAccess
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 's3:*'
+                Resource: '*'
+
+Outputs:
+  GenerateImageAPI:
+    Description: "API Gateway endpoint URL for Prod stage for Sentiment function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+  GenerateImageFunction:
+    Description: "Image generation Lambda Function ARN"
+    Value: !GetAtt GenerateImageFunction.Arn
+  GenerateImageFunctionIamRole:
+    Description: "Implicit IAM Role created for Image generation function"
+    Value: !GetAtt GenerateImageFunctionIamRole.Arn
