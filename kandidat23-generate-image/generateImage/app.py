@@ -49,6 +49,7 @@ def lambda_handler(event, context):
                 "seed": seed,
             }
         }
+        
 
         response = bedrock_client.invoke_model(modelId=model_id, body=json.dumps(native_request))
         model_response = json.loads(response["body"].read())
