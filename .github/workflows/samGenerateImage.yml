@@ -34,7 +34,7 @@ jobs:
           aws-region: "eu-west-1"
           
       - name: Build SAM Application
-        run: sam build
+        run: cd kandidat23-generate-image | sam build
       
       - name: Deploy SAM Application
         id: deploy
