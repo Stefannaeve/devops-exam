@@ -64,6 +64,7 @@ resource "aws_iam_role_policy_attachment" "lambda_bedrock_full_access" {
 
 resource "aws_sqs_queue" "sqs_queue" {
   name = "${var.prefix}_sqs_queue"
+  visibility_timeout_seconds = 65
 }
 
 resource "aws_sqs_queue_policy" "sqs_queue_policy" {
