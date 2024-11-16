@@ -28,15 +28,9 @@ jobs:
         run: terraform init
 
       - name: Terraform Plan
+        if: github.ref != 'refs/heads/main'
         working-directory: infra
         run: terraform plan -var="prefix=your-prefix-value"
-
-      - name: Upload Plan File (Non-Main Branches)
-        if: github.ref != 'refs/heads/main'
-        uses: actions/upload-artifact@v4
-        with:
-          name: terraform-plan
-          path: infra/tfplan.out
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
