@@ -33,6 +33,7 @@ resource "aws_iam_role_policy" "lambda_sqs_policy" {
   })
 }
 
+
 resource "aws_iam_role_policy" "lambda_s3_policy" {
   name = "${var.prefix}_LambdaS3Policy"
   role = aws_iam_role.lambda_exec_role.id
