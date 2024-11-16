@@ -29,7 +29,7 @@ jobs:
 
       - name: Terraform Plan
         working-directory: infra
-        run: terraform plan -out=tfplan.out -var="prefix=your-prefix-value"
+        run: terraform plan -var="prefix=your-prefix-value"
 
       - name: Upload Plan File (Non-Main Branches)
         if: github.ref != 'refs/heads/main'
@@ -41,4 +41,4 @@ jobs:
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         working-directory: infra
-        run: terraform apply -auto-approve tfplan.out
+        run: terraform apply -var="prefix=your-prefix-value" -auto-approve
