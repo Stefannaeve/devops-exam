@@ -21,12 +21,16 @@ public class SQSClient implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         System.out.println(args[0]);
+        // Expects prompt for image generation
         if (args.length != 1) {
             System.out.println("Please provide image prompt");
             System.exit(-1);
         }
+        // First string in argument is message body
         String messageBody = args[0];
 
+        // Sets region to Irland
+        // Uses a enviroment variable for sqs url
         Region region = Region.EU_WEST_1;
         String queueUrl = System.getenv("SQS_QUEUE_URL");
 
