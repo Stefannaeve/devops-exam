@@ -36,5 +36,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/JavaGenerateImage
-          
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/javagenerateimage
