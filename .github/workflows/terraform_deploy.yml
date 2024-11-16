@@ -29,7 +29,7 @@ jobs:
 
       - name: Terraform Plan
         working-directory: infra
-        run: terraform plan -out=tfplan.out
+        run: terraform plan -out=tfplan.out -var="prefix=your-prefix-value"
 
       - name: Upload Plan File (Non-Main Branches)
         if: github.ref != 'refs/heads/main'
