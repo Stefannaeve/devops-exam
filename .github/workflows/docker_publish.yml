@@ -33,7 +33,6 @@ jobs:
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
-        working-directory: java_sqs_client
         with:
           context: .
           push: true
