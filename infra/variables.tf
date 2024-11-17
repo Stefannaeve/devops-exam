@@ -5,4 +5,5 @@ variable "prefix" {
 
 variable "notification_email" {
   default = "stefan.naeve@hotmail.com"
+  type = string
 }
