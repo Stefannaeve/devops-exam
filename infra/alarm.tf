@@ -16,7 +16,7 @@ resource "aws_cloudwatch_metric_alarm" "sqs_age_alarm" {
   period              = 60
 
   metric_name = "ApproximateAgeOfOldestMessage"
-  namespace   = var.prefix
+  namespace   = "AWS/SQS"
   statistic   = "Maximum"
 
   dimensions = {
