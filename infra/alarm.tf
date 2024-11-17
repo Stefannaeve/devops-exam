@@ -9,7 +9,7 @@ resource "aws_sns_topic_subscription" "email_subscription" {
 }
 
 resource "aws_cloudwatch_metric_alarm" "sqs_age_alarm" {
-  alarm_name          = "${prefix}-OldestMessageAlarm"
+  alarm_name          = "${var.prefix}-OldestMessageAlarm"
   comparison_operator = "GreaterThanThreshold"
   evaluation_periods  = 1
   threshold           = 15
