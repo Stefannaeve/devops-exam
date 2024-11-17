@@ -20,7 +20,7 @@ resource "aws_cloudwatch_metric_alarm" "sqs_age_alarm" {
   statistic   = "Maximum"
 
   dimensions = {
-    QueueName = aws_sqs_queue.my_queue.name
+    QueueName = aws_sqs_queue.sqs_queue.name
   }
 
   alarm_description = "Alarm when the oldest message in the SQS queue exceeds the threshold age"
