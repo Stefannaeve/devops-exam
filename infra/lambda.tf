@@ -120,6 +120,7 @@ resource "aws_lambda_event_source_mapping" "lambda_sqs_trigger" {
   enabled          = true
 }
 
+
 # This was a weird one, i had a lot of problems with creating the aws cloudwatch
 # When i changed the input for the variable prefix
 # So i tried a lot to fix it, including trying to make lambda function dependant
