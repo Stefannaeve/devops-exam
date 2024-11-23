@@ -4,7 +4,6 @@ variable "prefix" {
 }
 
 variable "notification_email" {
-  default = "stefan.naeve@hotmail.com"
   type = string
   description = "Mail address the alarm will be sent to"
 }

@@ -30,9 +30,9 @@ jobs:
       - name: Terraform Plan
         if: github.ref != 'refs/heads/main'
         working-directory: infra
-        run: terraform plan -var="prefix=kandidat23" -var="notification_email=stefan.naeve@gmail.com"
+        run: terraform plan -var="prefix=kandidat23" -var="notification_email=${{ secrets.NOTIFICATION_EMAIL }}"
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         working-directory: infra
-        run: terraform apply -var="prefix=kandidat23" -var="notification_email=stefan.naeve@gmail.com" -auto-approve
+        run: terraform apply -var="prefix=kandidat23" -var="notification_email=${{ secrets.NOTIFICATION_EMAIL }}" -auto-approve
