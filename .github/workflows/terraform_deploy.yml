@@ -35,4 +35,4 @@ jobs:
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         working-directory: infra
-        run: terraform apply -var="prefix=kandidat23" -auto-approve
+        run: terraform apply -var="prefix=kandidat23" -var="notification_email=stefan.naeve@gmail.com" -auto-approve
