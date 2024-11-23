@@ -12,7 +12,7 @@ resource "aws_cloudwatch_metric_alarm" "sqs_age_alarm" {
   alarm_name          = "${var.prefix}-OldestMessageAlarm"
   comparison_operator = "GreaterThanThreshold"
   evaluation_periods  = 1
-  threshold           = 15
+  threshold           = 2
   period              = 60
 
   metric_name = "ApproximateAgeOfOldestMessage"
