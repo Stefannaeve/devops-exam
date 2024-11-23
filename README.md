@@ -4,9 +4,31 @@ ______  _______ _    _      _____   _____  _______     _______ _     _ _______ _
  |_____/ |______   \/       |_____| |       ______|     |______ _/   \_ |     | |  |  |
 ```
 
-Oppgave 1A: Implementer en Lambda-funksjon med SAM og API Gateway
-- HTTP Endepunkt for Lambdafunkskonen som sensor kan teste med Postman
-    - https://tiuynyv8fb.execute-api.eu-west-1.amazonaws.com/Prod/generate-image
+# Oppgave 1
+#### Oppgave 1A: Implementer en Lambda-funksjon med SAM og API Gateway
+1. HTTP Endepunkt for Lambdafunkskonen som sensor kan teste med Postman
+   - https://tiuynyv8fb.execute-api.eu-west-1.amazonaws.com/Prod/generate-image
+
+#### Oppgave 1B: Opprett en GitHub Actions Workflow for SAM-deploy
+1. Lenke til kjørt GitHub Actions workflow
+    - https://github.com/Stefannaeve/devops-exam/actions/runs/11990391053
+
+# Oppgave 2
+#### Oppgave 2A: Infrastruktur som kode
+1. Ingen leverings instrukser, men viser til folder i pgr301-
+   couch-explorers
+    - https://eu-west-1.console.aws.amazon.com/s3/buckets/pgr301-couch-explorers?region=eu-west-1&bucketType=general&prefix=23/task_2/&showversions=false
+
+#### Oppgave 2B: Opprett en GitHub Actions Workflow for Terraform
+1. Lenke til kjørt GitHub Actions workflow
+    - https://github.com/Stefannaeve/devops-exam/actions/runs/11990391057
+2. Lenke til en fungerende GitHub Actions workflow (ikke main): (Denne må gjøres)
+3. SQS-Kø URL:
+    - https://eu-west-1.console.aws.amazon.com/sqs/v3/home?region=eu-west-1#/queues/https%3A%2F%2Fsqs.eu-west-1.amazonaws.com%2F244530008913%2Fkandidat23_sqs_queue
+
+
+
+
 
 Task one:
     I used sam init to initailize the sam instance called 
