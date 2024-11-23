@@ -110,6 +110,8 @@ resource "aws_lambda_function" "sqs_lambda" {
     variables = {
       LOG_LEVEL = "DEBUG"
       QUEUE_URL = aws_sqs_queue.sqs_queue.id
+      bucket_name   = var.bucket_name
+      bucket_folder = var.bucket_folder
     }
   }
 }
