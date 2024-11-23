@@ -4,6 +4,10 @@ ______  _______ _    _      _____   _____  _______     _______ _     _ _______ _
  |_____/ |______   \/       |_____| |       ______|     |______ _/   \_ |     | |  |  |
 ```
 
+Oppgave 1A: Implementer en Lambda-funksjon med SAM og API Gateway
+- HTTP Endepunkt for Lambdafunkskonen som sensor kan teste med Postman
+    - https://tiuynyv8fb.execute-api.eu-west-1.amazonaws.com/Prod/generate-image
+
 Task one:
     I used sam init to initailize the sam instance called 
     kandidat23-generate_image. 
