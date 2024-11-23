@@ -30,7 +30,7 @@ jobs:
       - name: Terraform Plan
         if: github.ref != 'refs/heads/main'
         working-directory: infra
-        run: terraform plan -var="prefix=kandidat23"
+        run: terraform plan -var="prefix=kandidat23" -var="notification_email=stefan.naeve@gmail.com"
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
