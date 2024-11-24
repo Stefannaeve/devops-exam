@@ -35,7 +35,7 @@ ______  _______ _    _      _____   _____  _______     _______ _     _ _______ _
     - https://sqs.eu-west-1.amazonaws.com/244530008913/kandidat23_sqs_queue
 
 # Oppgave 4
-
+- Add "NOTIFICATION_EMAIL" to your secrets, and add your preferred email
 
 Task one:
     I used sam init to initailize the sam instance called 
