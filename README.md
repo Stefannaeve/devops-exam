@@ -48,7 +48,7 @@ ______  _______ _    _      _____   _____  _______     _______ _     _ _______ _
     nyeste versjonen av imaget ditt.
 2. Container image + SQS URL
     - stefannaeve/javagenerateimage
-    - https://sqs.eu-west-1.amazonaws.com/244530008913/kandidat23_sqs_queue
+    - https://eu-west-1.console.aws.amazon.com/sqs/v3/home?region=eu-west-1#/queues/https%3A%2F%2Fsqs.eu-west-1.amazonaws.com%2F244530008913%2Fkandidat23_sqs_queue
 
 # Oppgave 4
 - Add "NOTIFICATION_EMAIL" to your secrets, and add your preferred email
