@@ -21,6 +21,9 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          # I would have made this an variable if this actually was production
+          # code, but for ease of use for the sensor, i remove one variable
+          # from the secrets/variables.
           aws-region: "eu-west-1"
 
       - name: Terraform Init
