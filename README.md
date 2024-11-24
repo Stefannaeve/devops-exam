@@ -30,7 +30,22 @@ ______  _______ _    _      _____   _____  _______     _______ _     _ _______ _
 # Oppgave 3
 #### Oppgave 3A: Skriv en Dockerfile
 #### Oppgave 3B: Lag en GitHub Actions workflow som publiserer container image til Docker Hub
-1. Beskrivelse av taggestrategi: (Denne må gjøres)
+1. Beskrivelse av taggestrategi:
+    - Jeg endte opp med å gjøre to forskjellige tags, slik at 2 versjoner blir
+    pushed til dockerhub hver gang workflowen blir aktivert.
+    Den første taggen er git commiten slik den ser ut i github actions, sha
+    med bare 7 karakterer. Dette ser jeg for meg er en fantastisk måte å 
+    håndtere og følge med på forskjellige versjoner basert på hver git commit.
+    Om man vil se hvordan et docker image så ut på en spesifik commit,
+    så vil dette være veldig enkelt. Men jeg tenkte også over at dette kan føre
+    til stor plass bruk etterhvert, noe som jeg ikke trenger å tenke på under
+    denne eksamen, men jeg vil tro det er noe et stort selskap må tenke over.
+    Noe kan gjøres med dette med å slette de gamleste images når du har nådd
+    et spesifikt nivå foreksempel.
+
+    Tag nr 2 så følger jeg standaren. Der når man lager en oppdatering så setter
+    man den nyeste som "latest" slik at det er enkelt for folk å laste ned den
+    nyeste versjonen av imaget ditt.
 2. Container image + SQS URL
     - stefannaeve/javagenerateimage
     - https://sqs.eu-west-1.amazonaws.com/244530008913/kandidat23_sqs_queue
