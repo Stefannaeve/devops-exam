@@ -52,6 +52,8 @@ ______  _______ _    _      _____   _____  _______     _______ _     _ _______ _
 
 # Oppgave 4
 - Add "NOTIFICATION_EMAIL" to your secrets, and add your preferred email
+    - Added it as a secret so my own email or the email of the sensor doesnt need
+    to openly shown as the repo is public as of delivering the exam
 - Skriv om valget mitt av sns istedet for ses
 
 # Oppgave 5
