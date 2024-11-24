@@ -40,7 +40,9 @@ jobs:
         with:
           context: ./java_sqs_client
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops:${{ env.SHORT_SHA }}
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/devops:${{ env.SHORT_SHA }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/devops:latest
           
       - name: Build and push Docker image latest
         uses: docker/build-push-action@v6
