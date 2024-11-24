@@ -52,6 +52,42 @@ ______  _______ _    _      _____   _____  _______     _______ _     _ _______ _
 
 # Oppgave 4
 - Add "NOTIFICATION_EMAIL" to your secrets, and add your preferred email
+- Skriv om valget mitt av sns istedet for ses
+
+# Oppgave 5
+
+#### Automatisering og Kontinuerlig Levering (CI/CD)
+Serverless arkitekrur vil kan oppdatere og håndtere individuelle funksjoner uavhengig av resten av systemet, noe som vil gjøre kontinuerlig levering veldig mye enklere. I motsetning vil mikrotjenester ha mer tydelig avgrenset tjenester, slik at det blir lettere å bygge og vedlikeholde pipelines, men dette kan gjøre det vanskliere å oppdatere små deler av mikrotjenesten.
+
+Med Faas så vil det være enklere å håndtere individuelle funksjoner uavhengig av systemet, man kan i en større grad en mikrotjenester se bort ifra underliggende infrastruktur, dermed gjøre automatisering enklere. Men dette fører også til større mengder funksjoner, dermed økt kompleksitet i pipelines, som krever omfattende automatiserings skripter i utrullings strategier
+
+Mikrotjenester har større og færre som kan føre til enklere pipeline konfigurasjoner og mer stabil utrulling, men dette fører også til kompleks administrasjon når tjenesten kommer til en sådan størrelse at det blir upraktisk.
+
+#### Observability (Overvåkning)
+Når man bruker serverless kan man bruke tjenester som Cloudwatch, noe som gjør monitorering av systemet dit meget mye enklere. Men denne "enkelheten" kan føre til større kompleksitet da det er et system som vil være tilkoblet flere individuelle funksjoner.
+
+Mikrotjenester kan i en annen grad få dybere og klarere struktur på logging og overvåkning. Men denne loggingen er krevende, og omfattende overvåkningsverktøy for å kan kommunisere mellom tjenester. 
+
+#### Skalerbarhet og Kostnadskontroll
+Skalarbarhet er lett tilgjengelig i faas, og kan dynamisk skaleres basert på etterspørsel, men dette er selvførgelig skummelt med tanke på priser når det gjelds uforsigbare trafikkmønstre. Men betalingsmønstret er på mange andre måter veldig fint, med tanke på servere kan bli kjørt bare på faktiske kall, som setter ned ressursbruken generelt til serveren, som kan være billigere om det passer trafikkmønsteret. Men denne måten å håndtere servere på, men kjøring under faktisk bruk kan være upassende med tanke på begrensninger i minne og ressurser.
+
+Mikrotjenester er veldig fin og forutsigbar, med riktig ressursallokering og administrasjon kan kostnader i stor grad være forutsigbare, men på grunn av arkitekturen så kan man få overprovisjonering av ressurser, som kan føre til høyere kostnader
+
+#### Eierskap og ansvar
+Under faas så har man mindre infrastruktur ansvar, som kan få teamet til å fokusere på andre ting som er nødvendig, men dette fører også til mindre kontroll over underliggende infrastruktur. Ansvar for ytelse, pålitelighet og kostnader deles med skyleverandøren, som kan gjøre livet enklere for utvikleren, men samtidig kan skape uklarheter i ansvarsfordelingen
+
+Under mikrotjenester så har man fullt eierskap, da har teamet full kontroll over tjenestene, inkluder ytelse, pålitelighet og kostnader. Men dette gir stor ansvar til teamet, og økt administrasjonsbyrde, som krever større ressurser og kompetanse (i mange tilfeller). Det er enklere og mer tydelig definerte eierskap og ansvar, noe som kan forbedre kvalitet, men mange forskjellige tjenester kan føre til uklarheter og økt kompleksitet i ansvarsfordelig, noe som kan gå utover effektivitet i teamet.
+
+# Konklusjon:
+Valget mellom Faas og mikrotjenster bør definitivt bli basert på prosjektet, og teamets behov. Teamets kompetanse er også en stor faktor i en slik situasjon. 
+
+Faas er ideelt for skalerbarhet, og i prosjekter der det kan være forventet med usikker trafikkmønstre, og hvis det er forventet at man har en infrastrukter som skal lages raskt og smått så er det perfekt. Det gir enkel oppdatering av individuelle funksjoner og betalings modellen er basert på faktisk bruk av disse funksjonene. Men dette kan føre til økt kompleksitet og mindre kontroll over infrastrukturen.
+
+På den andre siden har vi mikrotjenester, som gir full kontroll over tjenestene, og tydelig eierskap og ansva. Det passer et team som har kapasiteten til håndtering av kompleksitet i administrasjon og overvåkning. Det passer til et team som kan forvente en mer lineær trafikk, slik at det er en kontinuelig server som går. Men dette kan selvførgelig føre til overprovisjonering av ressurser, og krever mer omfattende administrasjon.
+
+Begge har sine styrker og svakheter, og det beste valget av prosjektets krav og teamets ressurser.
+
+
 
 Task one:
     I used sam init to initailize the sam instance called 
