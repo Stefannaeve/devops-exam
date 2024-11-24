@@ -22,7 +22,8 @@ ______  _______ _    _      _____   _____  _______     _______ _     _ _______ _
 #### Oppgave 2B: Opprett en GitHub Actions Workflow for Terraform
 1. Lenke til kjørt GitHub Actions workflow
     - https://github.com/Stefannaeve/devops-exam/actions/runs/11990391057
-2. Lenke til en fungerende GitHub Actions workflow (ikke main): (Denne må gjøres)
+2. Lenke til en fungerende GitHub Actions workflow (ikke main):
+    - https://github.com/Stefannaeve/devops-exam/actions/runs/11991791753
 3. SQS-Kø URL:
     - https://eu-west-1.console.aws.amazon.com/sqs/v3/home?region=eu-west-1#/queues/https%3A%2F%2Fsqs.eu-west-1.amazonaws.com%2F244530008913%2Fkandidat23_sqs_queue
 
