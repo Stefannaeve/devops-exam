@@ -42,7 +42,7 @@ jobs:
         id: deploy
         run: |
           cd kandidat23-generate-image  
-          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset
+          sam deploy --parameter-overrides BucketName=pgr301-couch-explorers Kandidat=23 --no-confirm-changeset --no-fail-on-empty-changeset
               
       - name: Output Deployment URL
         run: echo "Lambda deployment successful"
