@@ -72,7 +72,7 @@ Resources:
               - Effect: Allow
                 Action:
                   - 's3:PutObject'
-                Resource: !Sub 'arn:aws:s3:::${BUCKET_NAME}/${KANDIDAT}/*'
+                Resource: !Sub 'arn:aws:s3:::${BucketName}/${Kandidat}/*'
 
 Outputs:
   GenerateImageAPI:
