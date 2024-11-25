@@ -4,6 +4,8 @@ Transform: AWS::Serverless-2016-10-31
 Parameters:
   BucketName:
     Type: String
+  Kandidat:
+    Type: String
 
 Globals:
   Function:
