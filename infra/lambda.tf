@@ -43,7 +43,7 @@ resource "aws_iam_role_policy" "lambda_s3_policy" {
       {
         "Effect": "Allow",
         "Action": [
-          "s3:*"
+          "s3:PutObject"
         ],
         "Resource": "arn:aws:s3:::pgr301-couch-explorers/*"
       }
@@ -120,6 +120,7 @@ resource "aws_lambda_event_source_mapping" "lambda_sqs_trigger" {
   event_source_arn = aws_sqs_queue.sqs_queue.arn
   function_name    = aws_lambda_function.sqs_lambda.arn
   enabled          = true
+  batch_size       = 5
 }
 
 
