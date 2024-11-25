@@ -57,7 +57,7 @@ Resources:
                   - 'logs:CreateLogStream'
                   - 'logs:PutLogEvents'
                 Resource: 'arn:aws:logs:*:*:*'
-        - PolicyName: BedrockFullAccess
+        - PolicyName: BedrockAccess
           PolicyDocument:
             Version: "2012-10-17"
             Statement:
@@ -65,7 +65,7 @@ Resources:
                 Action:
                   - 'bedrock:InvokeModel'
                 Resource: '*'
-        - PolicyName: S3FullAccess
+        - PolicyName: S3Access
           PolicyDocument:
             Version: "2012-10-17"
             Statement:
