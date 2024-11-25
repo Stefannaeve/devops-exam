@@ -60,33 +60,6 @@ resource "aws_iam_role_policy_attachment" "lambda_basic_execution" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
-resource "aws_sqs_queue" "sqs_queue" {
-  name = "${var.prefix}_sqs_queue"
-  // Has to be higher than function timeout
-  visibility_timeout_seconds = 65
-}
-
-resource "aws_sqs_queue_policy" "sqs_queue_policy" {
-  queue_url = aws_sqs_queue.sqs_queue.id
-
-  policy = jsonencode({
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Effect": "Allow",
-        "Principal": "*",
-        "Action": [
-          "sqs:SendMessage",
-          "sqs:ReceiveMessage",
-          "sqs:DeleteMessage",
-          "sqs:GetQueueAttributes"
-        ],
-        "Resource": aws_sqs_queue.sqs_queue.arn
-      }
-    ]
-  })
-}
-
 data "archive_file" "lambda_zip" {
   type = "zip"
   source_file = "lambda_sqs.py"
@@ -121,6 +94,8 @@ resource "aws_lambda_event_source_mapping" "lambda_sqs_trigger" {
   batch_size       = 5
 }
 
+#### Absolute chaos code based on problems when i changed the prefix, thought you might find this fun to look at
+#### I ended up importing the group with "terraform import", that fixed the log group problem
 
 # This was a weird one, i had a lot of problems with creating the aws cloudwatch
 # When i changed the input for the variable prefix
@@ -140,20 +115,6 @@ resource "null_resource" "set_log_retention" {
 }
 */
 
-resource "aws_cloudwatch_log_group" "sqs_log_group" {
-  name              = "/aws/lambda/${aws_lambda_function.sqs_lambda.function_name}"
-  retention_in_days = 60
-  
-  lifecycle {
-    create_before_destroy = true
-    prevent_destroy = false
-  }
-}
-
 output "lambda_function_name" {
   value = aws_lambda_function.sqs_lambda.function_name
-}
-
-output "sqs_queue_url" {
-  value = aws_sqs_queue.sqs_queue.id
 }
