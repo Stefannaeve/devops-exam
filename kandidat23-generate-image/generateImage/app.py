@@ -31,6 +31,7 @@ def lambda_handler(event, context):
                 "error": str(e)
             })
         }
+        
 
 
     seed = random.randint(0, 2147483647)
