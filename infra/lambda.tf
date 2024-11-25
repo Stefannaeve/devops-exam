@@ -129,6 +129,7 @@ resource "aws_lambda_event_source_mapping" "lambda_sqs_trigger" {
 # So aws wouldnt make it. That did not work, so after a lot of searching i found
 # This method to be the one that actually worked. This might never have been
 # A problem if i just stuck to the prefix i originally made lmfao
+/*
 resource "null_resource" "set_log_retention" {
   # Ensure this runs after the Lambda function is created
   depends_on = [aws_lambda_function.sqs_lambda]
@@ -137,10 +138,10 @@ resource "null_resource" "set_log_retention" {
     command = "aws logs put-retention-policy --log-group-name '/aws/lambda/${aws_lambda_function.sqs_lambda.function_name}' --retention-in-days 60"
   }
 }
+*/
 
-/*
 resource "aws_cloudwatch_log_group" "sqs_log_group" {
-  name              = "/aws/lambda/${var.prefix}_sqs_lambda_function"
+  name              = "/aws/lambda/${aws_lambda_function.sqs_lambda.function_name}"
   retention_in_days = 60
   
   lifecycle {
@@ -148,7 +149,6 @@ resource "aws_cloudwatch_log_group" "sqs_log_group" {
     prevent_destroy = false
   }
 }
-*/
 
 output "lambda_function_name" {
   value = aws_lambda_function.sqs_lambda.function_name
