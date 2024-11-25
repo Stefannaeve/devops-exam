@@ -15,24 +15,6 @@ resource "aws_iam_role" "lambda_exec_role" {
   name = "${var.prefix}_lambda_exec_role"
 }
 
-resource "aws_iam_role_policy" "lambda_sqs_policy" {
-  name = "${var.prefix}_LambdaSQSPolicy"
-  role = aws_iam_role.lambda_exec_role.id
-
-  policy = jsonencode({
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Effect": "Allow",
-        "Action": [
-          "sqs:*"
-        ],
-        "Resource": aws_sqs_queue.sqs_queue.arn
-      }
-    ]
-  })
-}
-
 resource "aws_iam_role_policy" "lambda_s3_policy" {
   name = "${var.prefix}_LambdaS3Policy"
   role = aws_iam_role.lambda_exec_role.id
@@ -98,7 +80,7 @@ resource "aws_sqs_queue_policy" "sqs_queue_policy" {
           "sqs:ReceiveMessage",
           "sqs:DeleteMessage",
           "sqs:GetQueueAttributes"
-        ]
+        ],
         "Resource": aws_sqs_queue.sqs_queue.arn
       }
     ]
