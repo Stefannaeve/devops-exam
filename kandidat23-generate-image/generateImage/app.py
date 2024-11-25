@@ -31,8 +31,6 @@ def lambda_handler(event, context):
                 "error": str(e)
             })
         }
-        
-
 
     seed = random.randint(0, 2147483647)
     s3_image_path = f"{kandidat}/task_1/titan_{seed}.png"

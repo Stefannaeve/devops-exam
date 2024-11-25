@@ -11,6 +11,7 @@ Globals:
     Environment:
       Variables:
         BUCKET_NAME: !Ref BucketName
+        KANDIDAT: !Ref Kandidat
 
 Resources:
   GenerateImageFunction:
@@ -60,7 +61,7 @@ Resources:
             Statement:
               - Effect: Allow
                 Action:
-                  - 'bedrock:*'
+                  - 'bedrock:InvokeModel'
                 Resource: '*'
         - PolicyName: S3FullAccess
           PolicyDocument:
