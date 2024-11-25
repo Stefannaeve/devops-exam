@@ -9,6 +9,9 @@ jobs:
   Build:
     name: Build and Prepare for Deployment
     runs-on: ubuntu-latest
+    env:
+      BUCKET: pgr301-couch-explorers
+      KANDIDAT: 23
     
     environment:
       name: main
@@ -42,7 +45,8 @@ jobs:
         id: deploy
         run: |
           cd kandidat23-generate-image  
-          sam deploy --parameter-overrides BucketName=pgr301-couch-explorers Kandidat=23 --no-confirm-changeset --no-fail-on-empty-changeset
+          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset \
+          --parameter-overrides BucketName=${{ env.BUCKET }} Kandidat=${{ env.KANDIDAT }}
               
       - name: Output Deployment URL
         run: echo "Lambda deployment successful"
