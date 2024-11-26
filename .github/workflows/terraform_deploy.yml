@@ -33,9 +33,9 @@ jobs:
       - name: Terraform Plan
         if: github.ref != 'refs/heads/main'
         working-directory: infra
-        run: terraform plan -var="prefix=kandidat23" -var="notification_email=${{ secrets.NOTIFICATION_EMAIL }}"
+        run: terraform plan -var="prefix=kandidat23"
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         working-directory: infra
-        run: terraform apply -var="prefix=kandidat23" -var="notification_email=${{ secrets.NOTIFICATION_EMAIL }}" -auto-approve
+        run: terraform apply -var="prefix=kandidat23" -auto-approve
