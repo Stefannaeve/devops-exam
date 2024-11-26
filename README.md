@@ -28,22 +28,17 @@ legge til sin egen mail på en god måte
 
 #### Oppgave 1B: Opprett en GitHub Actions Workflow for SAM-deploy
 1. Lenke til kjørt GitHub Actions workflow
-    - https://github.com/Stefannaeve/devops-exam/actions/runs/11990391053
+    - https://github.com/Stefannaeve/devops-exam/actions/runs/12022038142
 
 # Oppgave 2
 #### Oppgave 2A: Infrastruktur som kode
-1. Ingen leverings instrukser, men viser til folder i pgr301-
-   couch-explorers
-    - https://eu-west-1.console.aws.amazon.com/s3/buckets/pgr301-couch-explorers?region=eu-west-1&bucketType=general&prefix=23/task_2/&showversions=false
-
 #### Oppgave 2B: Opprett en GitHub Actions Workflow for Terraform
 1. Lenke til kjørt GitHub Actions workflow
-    - https://github.com/Stefannaeve/devops-exam/actions/runs/11990391057
+    - https://github.com/Stefannaeve/devops-exam/actions/runs/12022038143
 2. Lenke til en fungerende GitHub Actions workflow (ikke main):
     - https://github.com/Stefannaeve/devops-exam/actions/runs/11991791753
 3. SQS-Kø URL:
     - https://eu-west-1.console.aws.amazon.com/sqs/v3/home?region=eu-west-1#/queues/https%3A%2F%2Fsqs.eu-west-1.amazonaws.com%2F244530008913%2Fkandidat23_sqs_queue
-
 
 # Oppgave 3
 #### Oppgave 3A: Skriv en Dockerfile
