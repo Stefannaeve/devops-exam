@@ -38,8 +38,20 @@ legge til sin egen mail på en god måte
 2. Lenke til en fungerende GitHub Actions workflow (ikke main):
     - https://github.com/Stefannaeve/devops-exam/actions/runs/12022106843
 3. SQS-Kø URL:
-    - https://eu-west-1.console.aws.amazon.com/sqs/v3/home?region=eu-west-1#/queues/https%3A%2F%2Fsqs.eu-west-1.amazonaws.com%2F244530008913%2Fkandidat23_sqs_queue
     - https://sqs.eu-west-1.amazonaws.com/244530008913/kandidat23_sqs_queue
+    - https://eu-west-1.console.aws.amazon.com/sqs/v3/home?region=eu-west-1#/queues/https%3A%2F%2Fsqs.eu-west-1.amazonaws.com%2F244530008913%2Fkandidat23_sqs_queue
+
+Jeg brukte **x-www-form-urlencoded** i body på postman. Også brukte jeg disse valuene
+
+| Key | Value |
+| --------- | --------- |
+| Action | SendMessage |
+| MessageBody | An flying wooden boat |
+| Version | 2012-11-05 |
+
+I tillegg la jeg til riktig AccessKey, SecretKey, AWS Region og Service Name i 
+**Authorization** på postman. Jeg tar utgangspunkt i at sensor vet de riktige 
+verdiene for disse
 
 # Oppgave 3
 #### Oppgave 3A: Skriv en Dockerfile
