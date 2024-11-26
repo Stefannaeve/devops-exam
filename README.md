@@ -67,9 +67,6 @@ verdiene for disse
     - https://sqs.eu-west-1.amazonaws.com/244530008913/kandidat23_sqs_queue
 
 # Oppgave 4
-- Add "NOTIFICATION_EMAIL" to your secrets, and add your preferred email
-    - Added it as a secret so my own email or the email of the sensor doesnt need
-    to openly shown as the repo is public as of delivering the exam
 - Jeg valgte å gå for SNS istedet for SES da SNS er god for scalability. Å eventuelle utvidelser i framtiden. Den er også mer passende da den er enklere å håndtere etter min research.
 
 # Oppgave 5
