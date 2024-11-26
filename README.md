@@ -4,13 +4,13 @@ ______  _______ _    _      _____   _____  _______     _______ _     _ _______ _
  |_____/ |______   \/       |_____| |       ______|     |______ _/   \_ |     | |  |  |
 ```
 # Introduksjon
-Oppgave 1 ligger i mappe "kandidat23-generate-image"
-Oppgave 2 ligger i mappe "infra"
-Oppgave 3 ligger i mappe "java_sqs_client"
+Oppgave 1 ligger i mappe "kandidat23-generate-image"  
+Oppgave 2 ligger i mappe "infra"  
+Oppgave 3 ligger i mappe "java_sqs_client"  
 
-Jeg har 5 forskjellige secrets jeg bruker i programmet
-Den siste er for alarmer, tengte det var den enkleste måten for sensor å
-legge til sin egen mail på en god måte
+Jeg har 5 forskjellige github secrets jeg bruker i programmet  
+Den siste er for alarmer, tengte det var den enkleste måten for sensor å  
+legge til sin egen mail på en god måte  
 
 | Secret |
 | --------- |
