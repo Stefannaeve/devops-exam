@@ -44,6 +44,7 @@ legge til sin egen mail på en god måte
 3. SQS-Kø URL:
     - https://eu-west-1.console.aws.amazon.com/sqs/v3/home?region=eu-west-1#/queues/https%3A%2F%2Fsqs.eu-west-1.amazonaws.com%2F244530008913%2Fkandidat23_sqs_queue
 
+
 # Oppgave 3
 #### Oppgave 3A: Skriv en Dockerfile
 #### Oppgave 3B: Lag en GitHub Actions workflow som publiserer container image til Docker Hub
