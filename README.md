@@ -3,6 +3,23 @@ ______  _______ _    _      _____   _____  _______     _______ _     _ _______ _
  |     \ |______  \  /  ___ |     | |_____] |______ ___ |______  \___/  |_____| |  |  |
  |_____/ |______   \/       |_____| |       ______|     |______ _/   \_ |     | |  |  |
 ```
+# Introduksjon
+Oppgave 1 ligger i mappe "kandidat23-generate-image"
+Oppgave 2 ligger i mappe "infra"
+Oppgave 3 ligger i mappe "java_sqs_client"
+
+Jeg har 5 forskjellige secrets jeg bruker i programmet
+Den siste er for alarmer, tengte det var den enkleste måten for sensor å
+legge til sin egen mail på en god måte
+
+| Secret |
+| --------- |
+| AWS_ACCESS_KEY_ID |
+| AWS_SECRET_ACCESS_KEY |
+| DOCKERHUB_TOKEN |
+| DOCKERHUB_USERNAME |
+| NOTIFICATION_EMAIL |
+
 
 # Oppgave 1
 #### Oppgave 1A: Implementer en Lambda-funksjon med SAM og API Gateway

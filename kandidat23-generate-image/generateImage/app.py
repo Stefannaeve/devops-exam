@@ -9,7 +9,7 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 BUCKET_NAME = os.getenv('BUCKET_NAME')
-kandidat = os.getenv('KANDIDAT')
+KANDIDAT = os.getenv('KANDIDAT')
 
 bedrock_client = boto3.client("bedrock-runtime", region_name="us-east-1")
 s3_client = boto3.client("s3")
@@ -33,7 +33,7 @@ def lambda_handler(event, context):
         }
 
     seed = random.randint(0, 2147483647)
-    s3_image_path = f"{kandidat}/task_1/titan_{seed}.png"
+    s3_image_path = f"{KANDIDAT}/task_1/titan_{seed}.png"
 
     try:
         native_request = {
