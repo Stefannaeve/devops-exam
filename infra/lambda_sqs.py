@@ -5,7 +5,6 @@ import random
 import os
 
 # Frank; This is probalby be closer to what we need in production. Let's get funding first!
-
 bedrock_client = boto3.client("bedrock-runtime", region_name="us-east-1")
 s3_client = boto3.client("s3")
 
