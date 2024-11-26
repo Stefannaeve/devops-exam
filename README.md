@@ -20,19 +20,14 @@ legge til sin egen mail på en god måte
 | DOCKERHUB_USERNAME |
 | NOTIFICATION_EMAIL |
 
-
 # Oppgave 1
-#### Oppgave 1A: Implementer en Lambda-funksjon med SAM og API Gateway
 1. HTTP Endepunkt for Lambdafunkskonen som sensor kan teste med Postman
    - https://tiuynyv8fb.execute-api.eu-west-1.amazonaws.com/Prod/generate-image
 
-#### Oppgave 1B: Opprett en GitHub Actions Workflow for SAM-deploy
-1. Lenke til kjørt GitHub Actions workflow
+2. Lenke til kjørt GitHub Actions workflow
     - https://github.com/Stefannaeve/devops-exam/actions/runs/12022038142
 
 # Oppgave 2
-#### Oppgave 2A: Infrastruktur som kode
-#### Oppgave 2B: Opprett en GitHub Actions Workflow for Terraform
 1. Lenke til kjørt GitHub Actions workflow
     - https://github.com/Stefannaeve/devops-exam/actions/runs/12022038143
 2. Lenke til en fungerende GitHub Actions workflow (ikke main):
@@ -42,8 +37,6 @@ legge til sin egen mail på en god måte
     - https://sqs.eu-west-1.amazonaws.com/244530008913/kandidat23_sqs_queue
 
 # Oppgave 3
-#### Oppgave 3A: Skriv en Dockerfile
-#### Oppgave 3B: Lag en GitHub Actions workflow som publiserer container image til Docker Hub
 1. Beskrivelse av taggestrategi:
     - Jeg endte opp med å gjøre to forskjellige tags, slik at 2 versjoner blir
     pushed til dockerhub hver gang workflowen blir aktivert.
